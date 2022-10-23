@@ -5,11 +5,7 @@ class GameView: MTKView {
     var commandQueue: MTLCommandQueue!
     var renderPipelineState: MTLRenderPipelineState!
     
-    let verticies: [SIMD3<Float>] = [
-        SIMD3<Float>( 0,  1,  0), //top middle
-        SIMD3<Float>(-1, -1,  0), //bottom left
-        SIMD3<Float>( 1, -1,  0)  // bottom right
-    ]
+    var verticies: [Vertex]!
     
     var vertexBuffer: MTLBuffer!
     
@@ -27,11 +23,21 @@ class GameView: MTKView {
         
         createRenderPipelineState()
         
+        createVerticies()
+        
         createBuffers()
     }
     
+    func createVerticies() {
+        verticies = [
+            Vertex(position: SIMD3<Float>( 0, 1, 0), color: SIMD4<Float>(1,0,0,1)),
+            Vertex(position: SIMD3<Float>(-1,-1, 0), color: SIMD4<Float>(0,1,0,1)),
+            Vertex(position: SIMD3<Float>( 1,-1, 0), color: SIMD4<Float>(0,0,1,1)),
+        ]
+    }
+    
     func createBuffers() {
-        vertexBuffer = device?.makeBuffer(bytes: verticies, length: MemoryLayout<SIMD3<Float>>.stride * verticies.count, options: [])
+        vertexBuffer = device?.makeBuffer(bytes: verticies, length: Vertex.stride(verticies.count) * verticies.count, options: [])
     }
     
     func createRenderPipelineState() {
@@ -39,10 +45,23 @@ class GameView: MTKView {
         let vertexFunction = library?.makeFunction(name: "basic_vertex_shader")
         let fragmentFunction = library?.makeFunction(name: "basic_fragment_shader")
         
+        let vertexDescriptor = MTLVertexDescriptor()
+        
+        vertexDescriptor.attributes[0].format = .float3
+        vertexDescriptor.attributes[0].bufferIndex = 0
+        vertexDescriptor.attributes[0].offset = 0
+        
+        vertexDescriptor.attributes[1].format = .float4
+        vertexDescriptor.attributes[1].bufferIndex = 0
+        vertexDescriptor.attributes[1].offset = simd_float3.size
+        
+        vertexDescriptor.layouts[0].stride = Vertex.stride
+        
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
         renderPipelineDescriptor.vertexFunction = vertexFunction;
         renderPipelineDescriptor.fragmentFunction = fragmentFunction
+        renderPipelineDescriptor.vertexDescriptor = vertexDescriptor
         
         do {
             renderPipelineState = try device?.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
