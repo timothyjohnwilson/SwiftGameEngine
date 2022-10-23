@@ -1,0 +1,12 @@
+
+#include <metal_stdlib>
+using namespace metal;
+
+
+vertex float4 basic_vertex_shader(const device float3 *verticies [[ buffer(0) ]], const uint vertexID [[ vertex_id ]]) {
+    return float4(verticies[vertexID], 1);
+}
+
+fragment half4 basic_fragment_shader() {
+    return half4(1);
+}
