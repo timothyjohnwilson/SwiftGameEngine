@@ -32,7 +32,7 @@ struct Basic_RenderPipelineState: RenderPipelineState {
     public var renderPipelineState: MTLRenderPipelineState {
         var renderPipelineState: MTLRenderPipelineState!
         do {
-            renderPipelineState = try Engine.Device.makeRenderPipelineState(descriptor: RenderPipelineDescriptorLibrary.descriptor(.Basic))
+            renderPipelineState = try Engine.Device.makeRenderPipelineState(descriptor: RenderPipelineDescriptorLibrary.Descriptor(.Basic))
         } catch let error as NSError {
             print("ERROR::CREATE::RENDER_PIPELINE_STATE::__\(name)__::\(error)")
         }
