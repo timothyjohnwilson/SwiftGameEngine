@@ -24,19 +24,17 @@ class RenderPipelineStateLibrary {
 
 protocol RenderPipelineState {
     var name: String { get }
-    var renderPipelineState: MTLRenderPipelineState { get }
+    var renderPipelineState: MTLRenderPipelineState! { get }
 }
 
 struct Basic_RenderPipelineState: RenderPipelineState {
     public var name: String = "Basic Render Pipeline State"
-    public var renderPipelineState: MTLRenderPipelineState {
-        var renderPipelineState: MTLRenderPipelineState!
+    public var renderPipelineState: MTLRenderPipelineState!
+    init() {
         do {
             renderPipelineState = try Engine.Device.makeRenderPipelineState(descriptor: RenderPipelineDescriptorLibrary.Descriptor(.Basic))
         } catch let error as NSError {
             print("ERROR::CREATE::RENDER_PIPELINE_STATE::__\(name)__::\(error)")
         }
-        
-        return renderPipelineState
     }
 }

@@ -80,10 +80,10 @@ extension matrix_float4x4 {
         let r4c4: Float = 1.0
         
         result.columns = (
-            simd_float4(r1c1, r1c2, r1c3, r1c4),
-            simd_float4(r2c1, r2c2, r2c3, r2c4),
-            simd_float4(r3c1, r3c2, r3c3, r3c4),
-            simd_float4(r4c1, r4c2, r4c3, r4c4)
+            simd_float4(r1c1, r2c1, r3c1, r4c1),
+            simd_float4(r1c2, r2c2, r3c2, r4c2),
+            simd_float4(r1c3, r2c3, r3c3, r4c3),
+            simd_float4(r1c4, r2c4, r3c4, r4c4)
         )
         
         self = matrix_multiply(self, result)

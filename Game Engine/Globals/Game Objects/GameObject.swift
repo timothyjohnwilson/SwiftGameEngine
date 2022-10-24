@@ -10,13 +10,8 @@ class GameObject: Node {
         mesh = MeshLibrary.Mesh(meshType)
     }
     
-    var time: Float = 0
-    //issue that we're having is that the math appears to check out, however nothing is displaying
-    func update(deltaTime: Float) {
-        time += deltaTime
-        
-        self.scale = simd_float3(repeating: cos(time))
-        
+    
+    override func update(deltaTime: Float) {
         updateModelConstants()
     }
     
