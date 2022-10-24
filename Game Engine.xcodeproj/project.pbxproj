@@ -29,6 +29,7 @@
 		5A6652632905CDF800975A21 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6652622905CDF800975A21 /* Player.swift */; };
 		5A6652652905CE7300975A21 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6652642905CE7300975A21 /* Node.swift */; };
 		5A6652682905CF3400975A21 /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6652672905CF3400975A21 /* Renderable.swift */; };
+		5A66526C29062A3700975A21 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A66526B29062A3700975A21 /* Math.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		5A6652622905CDF800975A21 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5A6652642905CE7300975A21 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		5A6652672905CF3400975A21 /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
+		5A66526B29062A3700975A21 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		5A66521129058D4300975A21 /* Game Engine */ = {
 			isa = PBXGroup;
 			children = (
+				5A66526A29062A2A00975A21 /* Math */,
 				5A66525A2905C5D600975A21 /* Globals */,
 				5A6652472905B3A900975A21 /* Core */,
 				5A66524A2905B3F600975A21 /* Libraries */,
@@ -206,9 +209,9 @@
 		5A66525A2905C5D600975A21 /* Globals */ = {
 			isa = PBXGroup;
 			children = (
+				5A6652642905CE7300975A21 /* Node.swift */,
 				5A6652692905CFC600975A21 /* Game Objects */,
 				5A6652662905CF2900975A21 /* Protocols */,
-				5A6652642905CE7300975A21 /* Node.swift */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
@@ -228,6 +231,14 @@
 				5A66525C2905C5EB00975A21 /* GameObject.swift */,
 			);
 			path = "Game Objects";
+			sourceTree = "<group>";
+		};
+		5A66526A29062A2A00975A21 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				5A66526B29062A3700975A21 /* Math.swift */,
+			);
+			path = Math;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +382,7 @@
 				5A66524C2905B51700975A21 /* Engine.swift in Sources */,
 				5A66521329058D4300975A21 /* AppDelegate.swift in Sources */,
 				5A6652422905905100975A21 /* GameView.swift in Sources */,
+				5A66526C29062A3700975A21 /* Math.swift in Sources */,
 				5A66525D2905C5EB00975A21 /* GameObject.swift in Sources */,
 				5A6652652905CE7300975A21 /* Node.swift in Sources */,
 				5A6652462905A3AD00975A21 /* Types.swift in Sources */,

@@ -21,8 +21,12 @@ extension sizeable{
 }
 
 extension simd_float3: sizeable {}
-
+extension Float: sizeable {}
 struct Vertex: sizeable {
-    var position: SIMD3<Float>
-    var color: SIMD4<Float>
+    var position: simd_float3
+    var color: simd_float4
+}
+
+struct ModelConstants: sizeable {
+    var modelMatrix = matrix_identity_float4x4
 }
