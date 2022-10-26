@@ -13,6 +13,8 @@ class Engine {
         
         VertexDescriptorLibrary.Initialize()
         
+        DepthStencilStateLibrary.Initialize()
+        
         RenderPipelineDescriptorLibrary.Initialize()
         
         RenderPipelineStateLibrary.Initialize()
@@ -20,6 +22,7 @@ class Engine {
         MeshLibrary.Initialize()
         
         SceneManager.Initialize(Preferences.StartingSceneType)
+        
     }
     
     

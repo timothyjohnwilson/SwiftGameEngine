@@ -5,18 +5,17 @@ class SandboxScene: Scene {
     
     var debugCamera = DebugCamera()
     
+    var cube = Cube()
+    
     override func buildScene() {
         addCamera(debugCamera)
-        
-        let count: Int = 5
-        for y in -count..<count {
-            for x in -count..<count{
-                let pointer = Pointer(camera: debugCamera)
-                pointer.position.y = Float(Float(y) + 0.5) / Float(count)
-                pointer.position.x = Float(Float(x) + 0.5) / Float(count)
-                pointer.scale = simd_float3(repeating: 0.1)
-                addChild(pointer)
-            }
-        }
+        debugCamera.position.z = 5
+        addChild(cube)
+    }
+    
+    override func update(deltaTime: Float) {
+        cube.rotation.x += deltaTime
+        cube.rotation.y += deltaTime
+        super.update(deltaTime: deltaTime)
     }
 }
