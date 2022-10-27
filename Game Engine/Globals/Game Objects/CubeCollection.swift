@@ -10,8 +10,7 @@ class CubeCollection: InstancedGameObject {
         self.cubesWide = cubesWide
         self.cubesHigh = cubesHigh
         self.cubesBack = cubesBack
-        
-        print("CUBE COUNT: \(cubesWide * cubesHigh * cubesBack)")
+        self.name = "Cube Collection"
         
         setColor(ColorUtil.randomColor)
     }
@@ -37,7 +36,7 @@ class CubeCollection: InstancedGameObject {
                     _nodes[index].position.z = posZ
                     _nodes[index].rotation.z -= deltaTime * 2
                     _nodes[index].rotation.y -= deltaTime * 2
-                    _nodes[index].scale = float3(0.3, 0.3, 0.3)
+                    _nodes[index].scale = simd_float3(0.3, 0.3, 0.3)
                     index += 1
                 }
             }

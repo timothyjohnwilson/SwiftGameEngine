@@ -4,9 +4,8 @@ class Scene: Node {
     var cameraManager = CameraManager()
     var sceneConstants = SceneConstants()
     
-    override init() {
-        
-        super.init();
+    init() {
+        super.init(name: "Scene");
         buildScene();
     }
     
