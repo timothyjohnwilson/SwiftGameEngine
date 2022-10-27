@@ -1,5 +1,17 @@
 import MetalKit
 
+public var X_AXIS: simd_float3 {
+    return simd_float3(1,0,0)
+}
+
+public var Y_AXIS: simd_float3 {
+    return simd_float3(0,1,0)
+}
+
+public var Z_AXIS: simd_float3 {
+    return simd_float3(0,0,1)
+}
+
 extension Float {
     var toRadians: Float{
         return (self/100.0) * Float.pi
@@ -14,18 +26,6 @@ extension Float {
     }
 }
 
-
-public var X_AXIS: simd_float3 {
-    return simd_float3(1,0,0)
-}
-
-public var Y_AXIS: simd_float3 {
-    return simd_float3(0,1,0)
-}
-
-public var Z_AXIS: simd_float3 {
-    return simd_float3(0,0,1)
-}
 extension matrix_float4x4 {
 
     mutating func translate(direction: simd_float3) {

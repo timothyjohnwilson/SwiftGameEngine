@@ -1,7 +1,7 @@
 import MetalKit
 
 class Renderer: NSObject {
-    public static var ScreenSize: simd_float2 = simd_float2(repeating: 0)
+    public static var ScreenSize: simd_float2 = simd_float2(0,0)
     public static var AspectRatio: Float {
         return ScreenSize.x / ScreenSize.y
     }

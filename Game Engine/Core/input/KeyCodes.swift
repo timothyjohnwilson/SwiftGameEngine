@@ -1,4 +1,4 @@
-enum Keycodes: UInt16 {
+enum KeyCodes: UInt16 {
     //Special Chars
     case space             = 0x31
     case returnKey         = 0x24
