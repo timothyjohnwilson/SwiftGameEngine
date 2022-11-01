@@ -20,11 +20,16 @@ extension sizeable{
     }
 }
 
+extension simd_float2: sizeable {}
 extension simd_float3: sizeable {}
+extension simd_float4: sizeable {}
 extension Float: sizeable {}
+
 struct Vertex: sizeable {
     var position: simd_float3
     var color: simd_float4
+    var textureCoordinate: simd_float2
+    
 }
 
 struct ModelConstants: sizeable {
@@ -33,6 +38,7 @@ struct ModelConstants: sizeable {
 
 
 struct SceneConstants: sizeable {
+    var totalGameTime: Float = 0
     var viewMatrix = matrix_identity_float4x4
     var projectionMatrix = matrix_identity_float4x4
 }

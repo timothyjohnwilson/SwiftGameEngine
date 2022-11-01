@@ -14,8 +14,4 @@ class SandboxScene: Scene {
         addChild(quad)
     }
     
-    override func doUpdate() {
-        quad.setPositionX(cos(GameTime.TotalGameTime))
-    }
-    
 }

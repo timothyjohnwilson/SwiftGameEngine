@@ -46,8 +46,8 @@ class CustomMesh: Mesh {
                                                  options: [])
     }
     
-    func addVertex(position: simd_float3, color: simd_float4 = simd_float4(1,0,1,1)) {
-        _verticies.append(Vertex(position: position, color: color))
+    func addVertex(position: simd_float3, color: simd_float4 = simd_float4(1,0,1,1), textureCoordinate: simd_float2 = simd_float2(0,0)) {
+        _verticies.append(Vertex(position: position, color: color, textureCoordinate: textureCoordinate))
     }
     
     func setInstanceCount(_ count: Int) {
@@ -78,13 +78,13 @@ class Triangle_CustomMesh: CustomMesh {
 class Quad_CustomMesh: CustomMesh {
     override func createVerticies() {
         
-            addVertex(position: simd_float3( 1, 1, 0), color: simd_float4(1,0,0,1))
-            addVertex(position: simd_float3(-1, 1, 0), color: simd_float4(0,1,0,1))
-            addVertex(position: simd_float3(-1,-1, 0), color: simd_float4(0,0,1,1))
+        addVertex(position: simd_float3( 1, 1, 0), color: simd_float4(1,0,0,1), textureCoordinate: simd_float2(1,0))
+        addVertex(position: simd_float3(-1, 1, 0), color: simd_float4(0,1,0,1), textureCoordinate: simd_float2(0,0))
+        addVertex(position: simd_float3(-1,-1, 0), color: simd_float4(0,0,1,1), textureCoordinate: simd_float2(0,1))
             
-            addVertex(position: simd_float3( 1, 1, 0), color: simd_float4(1,0,0,1))
-            addVertex(position: simd_float3(-1,-1, 0), color: simd_float4(0,0,1,1))
-            addVertex(position: simd_float3( 1,-1, 0), color: simd_float4(1,0,1,1))
+            addVertex(position: simd_float3( 1, 1, 0), color: simd_float4(1,0,0,1), textureCoordinate: simd_float2(1,0))
+            addVertex(position: simd_float3(-1,-1, 0), color: simd_float4(0,0,1,1), textureCoordinate: simd_float2(0,1))
+            addVertex(position: simd_float3( 1,-1, 0), color: simd_float4(1,0,1,1), textureCoordinate: simd_float2(1,1))
     
     }
     
