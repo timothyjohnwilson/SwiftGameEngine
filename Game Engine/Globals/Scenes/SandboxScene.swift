@@ -10,7 +10,7 @@ class SandboxScene: Scene {
     override func buildScene() {
         addCamera(debugCamera)
         debugCamera.setPositionZ(5)
-        
+        quad.setTexture(.PartyPirateParot)
         addChild(quad)
     }
     

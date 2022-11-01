@@ -12,7 +12,7 @@ public enum ClearColors {
 class Preferences {
     public static var ClearColor: MTLClearColor = ClearColors.Green
     
-    public static var MainPixelFormat: MTLPixelFormat = MTLPixelFormat.bgra8Unorm
+    public static var MainPixelFormat: MTLPixelFormat = MTLPixelFormat.bgra8Unorm_srgb
     
     public static var MainDepthPixelFormat: MTLPixelFormat = MTLPixelFormat.depth32Float
     

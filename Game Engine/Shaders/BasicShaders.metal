@@ -19,14 +19,20 @@ vertex RasterizerData basic_vertex_shader(const VertexIn vIn [[ stage_in ]],
 }
 
 fragment half4 basic_fragment_shader(const RasterizerData rd [[ stage_in ]],
-                                     constant Material &material [[ buffer(1) ]]) {
-//    float4 color = material.useMaterialColor ? material.color : rd.color;
-    float2 textCoord = rd.textureCoordinate;
-    float gameTime = rd.totalGameTime;
+                                     constant Material &material [[ buffer(1) ]],
+                                     sampler sampler2d [[ sampler(0) ]],
+                                     texture2d<float> texture [[texture(0)]]) {
     
-    float x = sin((textCoord.x + gameTime) * 20);
-    float y = sin((textCoord.y - gameTime) * 20);
-    float z = tan((textCoord.x + gameTime) * 20);
-    float4 color = float4(x, y, z, 1 );
+    float2 textCoord = rd.textureCoordinate;
+    
+    float4 color;
+    
+    if(material.useTexture) {
+        color = texture.sample(sampler2d, textCoord);
+    } else if(material.useMaterialColor) {
+        color = material.color;
+    } else {
+         color = rd.color;
+    }
     return half4(color.r, color.g, color.b, color.a);
 };

@@ -53,6 +53,9 @@
 		5A81033729113C1C00E2C599 /* Shared.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5A81033629113C1C00E2C599 /* Shared.metal */; };
 		5A81033929113C2A00E2C599 /* InstancedShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5A81033829113C2A00E2C599 /* InstancedShaders.metal */; };
 		5A81033B29113C3A00E2C599 /* BasicShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5A81033A29113C3A00E2C599 /* BasicShaders.metal */; };
+		5A810340291144D900E2C599 /* PartyPirateParot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A81033F291144D900E2C599 /* PartyPirateParot.png */; };
+		5A8103422911461F00E2C599 /* TextureLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8103412911461F00E2C599 /* TextureLibrary.swift */; };
+		5A8103442911497E00E2C599 /* SamplerStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8103432911497E00E2C599 /* SamplerStateLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,9 @@
 		5A81033629113C1C00E2C599 /* Shared.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shared.metal; sourceTree = "<group>"; };
 		5A81033829113C2A00E2C599 /* InstancedShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = InstancedShaders.metal; sourceTree = "<group>"; };
 		5A81033A29113C3A00E2C599 /* BasicShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = BasicShaders.metal; sourceTree = "<group>"; };
+		5A81033F291144D900E2C599 /* PartyPirateParot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyPirateParot.png; sourceTree = "<group>"; };
+		5A8103412911461F00E2C599 /* TextureLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureLibrary.swift; sourceTree = "<group>"; };
+		5A8103432911497E00E2C599 /* SamplerStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerStateLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +222,7 @@
 		5A6652472905B3A900975A21 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5A81033C2911442900E2C599 /* res */,
 				5A66529B290A35A200975A21 /* utils */,
 				5A665294290A348500975A21 /* types */,
 				5A665293290A343500975A21 /* math */,
@@ -356,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				5A6652A0290A36F000975A21 /* MeshLibrary.swift */,
+				5A8103412911461F00E2C599 /* TextureLibrary.swift */,
 			);
 			path = libraries;
 			sourceTree = "<group>";
@@ -378,8 +386,17 @@
 				5A6652552905C0B600975A21 /* RenderPipelineStateLibrary.swift */,
 				5A6652512905BA9100975A21 /* VertexDescriptorLibrary.swift */,
 				5A6652AC290A41B100975A21 /* VertexShaderLibrary.swift */,
+				5A8103432911497E00E2C599 /* SamplerStateLibrary.swift */,
 			);
 			path = libraries;
+			sourceTree = "<group>";
+		};
+		5A81033C2911442900E2C599 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				5A81033F291144D900E2C599 /* PartyPirateParot.png */,
+			);
+			path = res;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +505,7 @@
 			files = (
 				5A66521A29058D4400975A21 /* Assets.xcassets in Resources */,
 				5A66521D29058D4400975A21 /* Main.storyboard in Resources */,
+				5A810340291144D900E2C599 /* PartyPirateParot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +543,7 @@
 				5A66527F29064F6400975A21 /* Mouse.swift in Sources */,
 				5A6652A1290A36F000975A21 /* MeshLibrary.swift in Sources */,
 				5A6652842907907400975A21 /* DebugCamera.swift in Sources */,
+				5A8103422911461F00E2C599 /* TextureLibrary.swift in Sources */,
 				5A66525F2905C74300975A21 /* Renderer.swift in Sources */,
 				5A6652882908D43A00975A21 /* Cube.swift in Sources */,
 				5A66524C2905B51700975A21 /* Engine.swift in Sources */,
@@ -538,6 +557,7 @@
 				5A6652422905905100975A21 /* GameView.swift in Sources */,
 				5A665296290A349000975A21 /* Library.swift in Sources */,
 				5A66526C29062A3700975A21 /* Math.swift in Sources */,
+				5A8103442911497E00E2C599 /* SamplerStateLibrary.swift in Sources */,
 				5A6652A5290A3CEF00975A21 /* Quad.swift in Sources */,
 				5A66527B29064B3C00975A21 /* Keyboard.swift in Sources */,
 				5A81033B29113C3A00E2C599 /* BasicShaders.metal in Sources */,
